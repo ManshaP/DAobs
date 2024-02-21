@@ -21,8 +21,8 @@ CONFIG = {
     'kernel_size': 3,
     'activation': 'SiLU',
     # Training
-    'epochs': 4096,
-    'batch_size': 32,
+    'epochs': 100,
+    'batch_size': 5,
     'optimizer': 'AdamW',
     'learning_rate': 2e-4,
     'weight_decay': 1e-3,
@@ -30,7 +30,7 @@ CONFIG = {
 }
 
 
-@job(array=3, cpus=4, gpus=1, ram='16GB', time='24:00:00')
+@job(array=3, cpus=4, gpus=1, ram='64GB', time='4:00:00', account='nvr_earth2_e2', partition='grizzly')
 def train(i: int):
     run = wandb.init(project='sda-kolmogorov', config=CONFIG)
     runpath = PATH / f'runs/{run.name}_{run.id}'
@@ -41,7 +41,7 @@ def train(i: int):
     # Network
     window = CONFIG['window']
     score = make_score(**CONFIG)
-    sde = VPSDE(score.kernel, shape=(window * 2, 64, 64)).cuda()
+    sde = VPSDE(score.kernel, shape=(window * 2, 256, 256)).cuda()
 
     # Data
     trainset = TrajectoryDataset(PATH / 'data/train.h5', window=window, flatten=True)

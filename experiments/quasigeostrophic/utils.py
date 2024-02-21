@@ -15,7 +15,7 @@ from sda.nn import *
 from sda.score import *
 from sda.utils import *
 
-
+os.environ['SCRATCH'] = '/lustre/fsw/portfolios/nvr/projects/nvr_earth2_e2'
 if 'SCRATCH' in os.environ:
     SCRATCH = os.environ['SCRATCH']
     PATH = Path(SCRATCH) / 'sda/quasigeostrophic'

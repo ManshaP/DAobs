@@ -12,7 +12,7 @@ from utils import *
 
 
 @ensure(lambda i: (PATH / f'data/x_{i:06d}.nc').exists())
-@job(array=1024, cpus=1, ram='4GB', time='12:00:00')
+@job(array=10, cpus=1, ram='4GB', time='12:00:00', account='nvr_earth2_e2', partition='backfill_block1')
 def simulate(i: int):
     np.random.seed(i)
 
@@ -43,7 +43,7 @@ def simulate(i: int):
 
 
 @after(simulate)
-@job(cpus=4, ram='16GB', time='06:00:00')
+@job(cpus=4, ram='16GB', time='06:00:00', account='nvr_earth2_e2', partition='backfill_block1')
 def aggregate():
     files = sorted(PATH.glob('data/x_*.nc'))
     length = len(files)

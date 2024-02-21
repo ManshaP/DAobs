@@ -8,7 +8,7 @@ from typing import *
 from utils import *
 
 
-@job(cpus=1, ram='1GB', time='00:05:00')
+@job(cpus=1, ram='1GB', time='00:05:00', account='nvr_earth2_e2', partition='grizzly')
 def simulate():
     chain = make_chain()
 

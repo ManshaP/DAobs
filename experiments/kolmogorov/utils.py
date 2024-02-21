@@ -1,7 +1,7 @@
 r"""Kolmogorov experiment helpers"""
 
 import os
-import seaborn
+# import seaborn
 
 from numpy.typing import ArrayLike
 from pathlib import Path
@@ -13,6 +13,7 @@ from sda.score import *
 from sda.utils import *
 
 
+os.environ['SCRATCH'] = '/lustre/fsw/portfolios/nvr/projects/nvr_earth2_e2'
 if 'SCRATCH' in os.environ:
     SCRATCH = os.environ['SCRATCH']
     PATH = Path(SCRATCH) / 'sda/kolmogorov'
@@ -91,9 +92,9 @@ def vorticity2rgb(
     w = 2 * w - 1
     w = np.sign(w) * np.abs(w) ** 0.8
     w = (w + 1) / 2
-    w = seaborn.cm.icefire(w)
+    # w = seaborn.cm.icefire(w)
     w = 256 * w[..., :3]
-    w = w.astype(np.uint8)
+    # w = w.astype(np.uint8)
 
     return w
 
