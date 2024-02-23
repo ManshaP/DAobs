@@ -1,0 +1,27 @@
+#!/bin/bash
+# Job name:
+#SBATCH --job-name=sim_kolmogorov
+#
+# Account:
+#SBATCH --account=nvr_earth2_e2
+#
+# Partition:
+#SBATCH --partition=polar
+#
+# Number of tasks (one for each GPU desired for use case) (example):
+#SBATCH --ntasks=1
+#
+# Processors:
+#SBATCH --cpus-per-task=4
+#
+#Number of GPUs
+#SBATCH --gpus=1
+#
+# Wall clock limit:
+#SBATCH --time=4:00:00
+#
+# Array
+#SBATCH --array=11
+## Command(s) to run (example):
+python ~/sda/experiments/kolmogorov/navier_stokes.py ${SLURM_ARRAY_JOB_ID}
+

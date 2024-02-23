@@ -21,8 +21,8 @@ CONFIG = {
     'kernel_size': 3,
     'activation': 'SiLU',
     # Training
-    'epochs': 100,
-    'batch_size': 5,
+    'epochs': 1024,
+    'batch_size': 10,
     'optimizer': 'AdamW',
     'learning_rate': 2e-4,
     'weight_decay': 1e-3,
@@ -30,7 +30,7 @@ CONFIG = {
 }
 
 
-@job(array=3, cpus=4, gpus=1, ram='64GB', time='4:00:00', account='nvr_earth2_e2', partition='grizzly')
+@job(array=1, cpus=4, gpus=1, ram='64GB', time='4:00:00', account='nvr_earth2_e2', partition='polar')
 def train(i: int):
     run = wandb.init(project='sda-kolmogorov', config=CONFIG)
     runpath = PATH / f'runs/{run.name}_{run.id}'

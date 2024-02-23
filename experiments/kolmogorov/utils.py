@@ -1,7 +1,7 @@
 r"""Kolmogorov experiment helpers"""
 
 import os
-# import seaborn
+import seaborn
 
 from numpy.typing import ArrayLike
 from pathlib import Path
@@ -33,7 +33,7 @@ class LocalScoreUNet(ScoreUNet):
     def __init__(
         self,
         channels: int,
-        size: int = 64,
+        size: int = 256,
         **kwargs,
     ):
         super().__init__(channels, 1, **kwargs)
@@ -44,7 +44,7 @@ class LocalScoreUNet(ScoreUNet):
         self.register_buffer('forcing', forcing)
 
     def forward(self, x: Tensor, t: Tensor, c: Tensor = None) -> Tensor:
-        return super().forward(x, t, self.forcing)
+        return super().forward(x, t , self.forcing)
 
 
 def make_score(
@@ -66,6 +66,7 @@ def make_score(
         activation=ACTIVATIONS[activation],
         spatial=2,
         padding_mode='circular',
+
     )
 
     return score
@@ -92,9 +93,9 @@ def vorticity2rgb(
     w = 2 * w - 1
     w = np.sign(w) * np.abs(w) ** 0.8
     w = (w + 1) / 2
-    # w = seaborn.cm.icefire(w)
+    w = seaborn.cm.icefire(w)
     w = 256 * w[..., :3]
-    # w = w.astype(np.uint8)
+    w = w.astype(np.uint8)
 
     return w
 

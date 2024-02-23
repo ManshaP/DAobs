@@ -328,13 +328,13 @@ class DPSGaussianScore(nn.Module):
         self.sde = sde
         self.zeta = zeta
 
-    def forward(self, x: Tensor, t: Tensor) -> Tensor:
+    def forward(self, x: Tensor, t: Tensor, c: Tensor = None) -> Tensor:
         mu, sigma = self.sde.mu(t), self.sde.sigma(t)
 
         with torch.enable_grad():
             x = x.detach().requires_grad_(True)
 
-            eps = self.sde.eps(x, t)
+            eps = self.sde.eps(x, t, c)
             x_ = (x - sigma * eps) / mu
             err = (self.y - self.A(x_)).square().sum()
 

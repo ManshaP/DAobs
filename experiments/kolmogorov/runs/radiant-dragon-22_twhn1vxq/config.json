@@ -1,0 +1,1 @@
+{"window": 5, "embedding": 64, "hidden_channels": [64, 128, 256], "hidden_blocks": [3, 3, 3], "kernel_size": 3, "activation": "SiLU", "epochs": 200, "batch_size": 5, "optimizer": "AdamW", "learning_rate": 0.0002, "weight_decay": 0.001, "scheduler": "linear"}
