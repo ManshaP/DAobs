@@ -15,7 +15,7 @@ wandb/
 # macOS
 .DS_Store
 
-
+experiments/kolmogorov/figures.ipynb
 ##########
 # Python #
 ##########
@@ -158,3 +158,14 @@ dmypy.json
 
 # Cython debug symbols
 cython_debug/
+./.git/objects/pack/pack-baefd813ed19adbcc2528ff8c837279b88aeeb2c.pack
+./.git/objects/11/0a82bb1c967269dac4f313987a74e9c4342659
+./.git/objects/a1/cc6a5f60254f1bd3d3657ad701ef7bed02432b
+./.git/objects/b4/90519ba99198648e61d738d356069309989c5e
+./.git/objects/62/ef89533a624212090a0b2275de1a531cd3d132
+./.git/objects/82/ddeb9408049d51ad5eb842484d50252824ae09
+./experiments/kolmogorov/figures.ipynb
+./experiments/kolmogorov/.ipynb_checkpoints/figures-checkpoint.ipynb
+./experiments/quasigeostrophic/figures.ipynb
+./experiments/quasigeostrophic/ourversion/test_data
+./experiments/lorenz/data/train.h5

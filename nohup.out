@@ -1,0 +1,71 @@
+[I 2024-03-04 12:01:14.815 ServerApp] jupyter_lsp | extension was successfully linked.
+[I 2024-03-04 12:01:14.826 ServerApp] jupyter_server_terminals | extension was successfully linked.
+[I 2024-03-04 12:01:14.836 ServerApp] jupyterlab | extension was successfully linked.
+[I 2024-03-04 12:01:14.845 ServerApp] notebook | extension was successfully linked.
+[I 2024-03-04 12:01:17.636 ServerApp] notebook_shim | extension was successfully linked.
+[I 2024-03-04 12:01:17.807 ServerApp] notebook_shim | extension was successfully loaded.
+[I 2024-03-04 12:01:17.809 ServerApp] jupyter_lsp | extension was successfully loaded.
+[I 2024-03-04 12:01:17.813 ServerApp] jupyter_server_terminals | extension was successfully loaded.
+[I 2024-03-04 12:01:17.839 LabApp] JupyterLab extension loaded from /home/pmanshausen/miniconda3/envs/sda/lib/python3.9/site-packages/jupyterlab
+[I 2024-03-04 12:01:17.839 LabApp] JupyterLab application directory is /home/pmanshausen/miniconda3/envs/sda/share/jupyter/lab
+[I 2024-03-04 12:01:17.843 LabApp] Extension Manager is 'pypi'.
+[I 2024-03-04 12:01:17.863 ServerApp] jupyterlab | extension was successfully loaded.
+[I 2024-03-04 12:01:17.882 ServerApp] notebook | extension was successfully loaded.
+[I 2024-03-04 12:01:17.882 ServerApp] Serving notebooks from local directory: /home/pmanshausen/sda
+[I 2024-03-04 12:01:17.882 ServerApp] Jupyter Server 2.12.5 is running at:
+[I 2024-03-04 12:01:17.883 ServerApp] http://localhost:8888/lab?token=a5b5d5fd7d0c0018c3b4d3d810fda3c62a33d1ac8dc92554
+[I 2024-03-04 12:01:17.883 ServerApp]     http://127.0.0.1:8888/lab?token=a5b5d5fd7d0c0018c3b4d3d810fda3c62a33d1ac8dc92554
+[I 2024-03-04 12:01:17.883 ServerApp] Use Control-C to stop this server and shut down all kernels (twice to skip confirmation).
+[C 2024-03-04 12:01:17.924 ServerApp] 
+    
+    To access the server, open this file in a browser:
+        file:///home/pmanshausen/.local/share/jupyter/runtime/jpserver-3317314-open.html
+    Or copy and paste one of these URLs:
+        http://localhost:8888/lab?token=a5b5d5fd7d0c0018c3b4d3d810fda3c62a33d1ac8dc92554
+        http://127.0.0.1:8888/lab?token=a5b5d5fd7d0c0018c3b4d3d810fda3c62a33d1ac8dc92554
+[I 2024-03-04 12:01:18.064 ServerApp] Skipped non-installed server(s): bash-language-server, dockerfile-language-server-nodejs, javascript-typescript-langserver, jedi-language-server, julia-language-server, pyright, python-language-server, python-lsp-server, r-languageserver, sql-language-server, texlab, typescript-language-server, unified-language-server, vscode-css-languageserver-bin, vscode-html-languageserver-bin, vscode-json-languageserver-bin, yaml-language-server
+[I 2024-03-04 12:01:30.592 ServerApp] 302 GET /?token=[secret] (@127.0.0.1) 0.44ms
+[W 2024-03-04 12:01:33.311 LabApp] Could not determine jupyterlab build status without nodejs
+[W 2024-03-04 12:01:33.611 ServerApp] 404 GET /api/contents/sda/experiments/kolmogorov/figures.ipynb?content=0&hash=0&1709582493553 (0062d959a1b047379aec725403158922@127.0.0.1) 1.76ms referer=http://localhost:8889/lab
+[W 2024-03-04 12:01:33.611 ServerApp] 404 GET /api/contents/sda/experiments/kolmogorov/figures.ipynb?content=0&hash=0&1709582493553 (127.0.0.1): No such file or directory: sda/experiments/kolmogorov/figures.ipynb
+[W 2024-03-04 12:01:34.379 ServerApp] 404 GET /api/contents/sda/experiments/kolmogorov?1709582494321 (0062d959a1b047379aec725403158922@127.0.0.1) 1.35ms referer=http://localhost:8889/lab
+[W 2024-03-04 12:01:34.379 ServerApp] 404 GET /api/contents/sda/experiments/kolmogorov?1709582494321 (127.0.0.1): No such file or directory: sda/experiments/kolmogorov
+[W 2024-03-04 12:01:40.823 ServerApp] Notebook obs/ok_station_gridding.ipynb is not trusted
+[I 2024-03-04 12:01:41.593 ServerApp] Kernel started: c6a091d7-fdcc-4a0c-a51e-04a728e2a7f9
+[I 2024-03-04 12:01:43.474 ServerApp] Connecting to kernel c6a091d7-fdcc-4a0c-a51e-04a728e2a7f9.
+[I 2024-03-04 12:01:43.612 ServerApp] Starting buffering for c6a091d7-fdcc-4a0c-a51e-04a728e2a7f9:900949ff-b0c9-42da-b125-f8c9275d80b9
+[I 2024-03-04 12:01:43.756 ServerApp] Connecting to kernel c6a091d7-fdcc-4a0c-a51e-04a728e2a7f9.
+[I 2024-03-04 12:01:44.038 ServerApp] Connecting to kernel c6a091d7-fdcc-4a0c-a51e-04a728e2a7f9.
+[I 2024-03-04 12:03:41.396 ServerApp] Saving file at /obs/ok_station_gridding.ipynb
+[W 2024-03-04 12:03:41.398 ServerApp] Notebook obs/ok_station_gridding.ipynb is not trusted
+[I 2024-03-04 12:05:41.718 ServerApp] Saving file at /obs/ok_station_gridding.ipynb
+[W 2024-03-04 12:05:41.724 ServerApp] Notebook obs/ok_station_gridding.ipynb is not trusted
+[I 2024-03-04 12:07:42.054 ServerApp] Saving file at /obs/ok_station_gridding.ipynb
+[W 2024-03-04 12:07:42.061 ServerApp] Notebook obs/ok_station_gridding.ipynb is not trusted
+[I 2024-03-04 12:09:42.387 ServerApp] Saving file at /obs/ok_station_gridding.ipynb
+[W 2024-03-04 12:09:42.397 ServerApp] Notebook obs/ok_station_gridding.ipynb is not trusted
+[I 2024-03-04 12:13:43.623 ServerApp] Saving file at /obs/ok_station_gridding.ipynb
+[W 2024-03-04 12:13:43.633 ServerApp] Notebook obs/ok_station_gridding.ipynb is not trusted
+[I 2024-03-04 12:15:45.500 ServerApp] Saving file at /obs/ok_station_gridding.ipynb
+[W 2024-03-04 12:15:45.507 ServerApp] Notebook obs/ok_station_gridding.ipynb is not trusted
+[I 2024-03-04 12:17:45.878 ServerApp] Saving file at /obs/ok_station_gridding.ipynb
+[W 2024-03-04 12:17:45.887 ServerApp] Notebook obs/ok_station_gridding.ipynb is not trusted
+[I 2024-03-04 12:19:46.266 ServerApp] Saving file at /obs/ok_station_gridding.ipynb
+[W 2024-03-04 12:19:46.271 ServerApp] Notebook obs/ok_station_gridding.ipynb is not trusted
+[I 2024-03-04 12:21:19.669 ServerApp] Creating new notebook in /obs
+[I 2024-03-04 12:21:22.507 ServerApp] Kernel started: e9535ed6-b74b-4018-9e95-e4ed2a3d58b4
+[I 2024-03-04 12:21:29.792 ServerApp] Connecting to kernel e9535ed6-b74b-4018-9e95-e4ed2a3d58b4.
+[I 2024-03-04 12:23:20.177 ServerApp] Saving file at /obs/Untitled.ipynb
+[I 2024-03-04 12:33:25.407 ServerApp] Saving file at /obs/Untitled.ipynb
+[I 2024-03-04 12:43:44.334 ServerApp] Starting buffering for e9535ed6-b74b-4018-9e95-e4ed2a3d58b4:98dd610e-077d-4c08-8bf5-400e13b0d29d
+[I 2024-03-04 12:43:44.422 ServerApp] Starting buffering for c6a091d7-fdcc-4a0c-a51e-04a728e2a7f9:08b59d34-c0cf-4864-9201-1b518bc0ab2f
+[I 2024-03-04 12:43:44.720 ServerApp] Connecting to kernel e9535ed6-b74b-4018-9e95-e4ed2a3d58b4.
+[I 2024-03-04 12:43:44.721 ServerApp] Restoring connection for e9535ed6-b74b-4018-9e95-e4ed2a3d58b4:98dd610e-077d-4c08-8bf5-400e13b0d29d
+[I 2024-03-04 12:43:45.000 ServerApp] Connecting to kernel c6a091d7-fdcc-4a0c-a51e-04a728e2a7f9.
+[I 2024-03-04 12:43:45.001 ServerApp] Restoring connection for c6a091d7-fdcc-4a0c-a51e-04a728e2a7f9:08b59d34-c0cf-4864-9201-1b518bc0ab2f
+[I 2024-03-04 12:43:47.584 ServerApp] Starting buffering for e9535ed6-b74b-4018-9e95-e4ed2a3d58b4:98dd610e-077d-4c08-8bf5-400e13b0d29d
+[I 2024-03-04 12:43:47.585 ServerApp] Starting buffering for c6a091d7-fdcc-4a0c-a51e-04a728e2a7f9:08b59d34-c0cf-4864-9201-1b518bc0ab2f
+[I 2024-03-04 13:21:56.020 ServerApp] Connecting to kernel e9535ed6-b74b-4018-9e95-e4ed2a3d58b4.
+[I 2024-03-04 13:21:56.027 ServerApp] Restoring connection for e9535ed6-b74b-4018-9e95-e4ed2a3d58b4:98dd610e-077d-4c08-8bf5-400e13b0d29d
+[I 2024-03-04 13:21:56.298 ServerApp] Connecting to kernel c6a091d7-fdcc-4a0c-a51e-04a728e2a7f9.
+[I 2024-03-04 13:21:56.301 ServerApp] Restoring connection for c6a091d7-fdcc-4a0c-a51e-04a728e2a7f9:08b59d34-c0cf-4864-9201-1b518bc0ab2f
