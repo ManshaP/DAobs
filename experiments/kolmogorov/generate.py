@@ -13,7 +13,7 @@ from utils import *
 
 
 @ensure(lambda i: (PATH / f'data/x_{i:06d}.npy').exists())
-@job(array=1024, cpus=1, ram='1GB', time='00:05:00')
+@job(array=10, cpus=1, ram='1GB', time='00:05:00',  account='nvr_earth2_e2', partition='grizzly')
 def simulate(i: int):
     chain = make_chain()
 
@@ -23,13 +23,13 @@ def simulate(i: int):
     x = chain.trajectory(x, length=128)
     x = x[64:]
 
-    np.save(PATH / f'data/x_{i:06d}.npy', x)
+    np.save(PATH / f'data/rozx_{i:06d}.npy', x)
 
 
 @after(simulate)
-@job(cpus=1, ram='1GB', time='00:15:00')
+@job(cpus=1, ram='1GB', time='00:15:00', account='nvr_earth2_e2', partition='grizzly')
 def aggregate():
-    files = sorted(PATH.glob('data/x_*.npy'))
+    files = sorted(PATH.glob('data/rozx_*.npy'))
     length = len(files)
 
     i = int(0.8 * length)
@@ -42,10 +42,10 @@ def aggregate():
     }
 
     for name, files in splits.items():
-        with h5py.File(PATH / f'data/{name}.h5', mode='w') as f:
+        with h5py.File(PATH / f'data/roz{name}.h5', mode='w') as f:
             f.create_dataset(
                 'x',
-                shape=(len(files), 64, 2, 64, 64),
+                shape=(len(files), 64, 2, 64, 64), #time steps, channels, lat, lon
                 dtype=np.float32,
             )
 

@@ -15,7 +15,7 @@ from utils import *
 GLOBAL_CONFIG = {
     # Architecture
     'embedding': 32,
-    'hidden_channels': (64,),
+    'hidden_channels': (32,),
     'hidden_blocks': (3,),
     'activation': 'SiLU',
     # Training
@@ -44,7 +44,7 @@ LOCAL_CONFIG = {
 }
 
 
-@job(array=3, cpus=4, gpus=1, ram='8GB', time='06:00:00')
+@job(array=3, cpus=4, gpus=1, ram='8GB', time='06:00:00', account='nvr_earth2_e2', partition='backfill_block1')
 def train_global(i: int):
     run = wandb.init(project='sda-lorenz', group='global', config=GLOBAL_CONFIG)
     runpath = PATH / f'runs/{run.name}_{run.id}'
@@ -94,7 +94,7 @@ def train_global(i: int):
     run.finish()
 
 
-@job(array=3, cpus=4, gpus=1, ram='8GB', time='06:00:00')
+@job(array=3, cpus=4, gpus=1, ram='8GB', time='06:00:00', account='nvr_earth2_e2', partition='backfill_block1')
 def train_local(i: int):
     run = wandb.init(project='sda-lorenz', group='local', config=LOCAL_CONFIG)
     runpath = PATH / f'runs/{run.name}_{run.id}'

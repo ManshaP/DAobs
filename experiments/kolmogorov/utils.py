@@ -13,6 +13,7 @@ from sda.score import *
 from sda.utils import *
 
 
+os.environ['SCRATCH'] = '/lustre/fsw/portfolios/nvr/projects/nvr_earth2_e2'
 if 'SCRATCH' in os.environ:
     SCRATCH = os.environ['SCRATCH']
     PATH = Path(SCRATCH) / 'sda/kolmogorov'
@@ -43,7 +44,7 @@ class LocalScoreUNet(ScoreUNet):
         self.register_buffer('forcing', forcing)
 
     def forward(self, x: Tensor, t: Tensor, c: Tensor = None) -> Tensor:
-        return super().forward(x, t, self.forcing)
+        return super().forward(x, t , self.forcing)
 
 
 def make_score(
@@ -65,6 +66,7 @@ def make_score(
         activation=ACTIVATIONS[activation],
         spatial=2,
         padding_mode='circular',
+
     )
 
     return score

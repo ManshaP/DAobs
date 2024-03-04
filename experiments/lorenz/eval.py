@@ -14,7 +14,7 @@ from utils import *
 
 
 @ensure(lambda: (PATH / f'results/obs.h5').exists())
-@job(cpus=1, ram='1GB', time='00:05:00')
+@job(cpus=1, ram='1GB', time='00:05:00', account='nvr_earth2_e2', partition='backfill_block1')
 def observations():
     with h5py.File(PATH / 'data/test.h5', mode='r') as f:
         x = f['x'][:, :65]
@@ -30,16 +30,16 @@ def observations():
 jobs = []
 
 for name, local in [
-    ('polar-capybara-13_y1g6w4jm', True),  # k=1
-    ('snowy-leaf-29_711r6as1', True),  # k=2
-    ('ruby-serenity-42_nbhxlnf9', True),  # k=3
-    ('light-moon-51_09a36gw8', True),  # k=4
-    ('lilac-bush-61_7f0sioiw', False),  # k≈8
+    ('cheerful-mandu-24_kv4670me', True),  # k=1
+    ('fortuitous-monkey-23_5knplrqr', True),  # k=2
+    ('alight-orchid-19_cwl0kqrg', True),  # k=3
+    ('alight-orchid-19_cwl0kqrg', True),  # k=4
+    ('filigreed-dragon-21_bxksae8w', False),  # k≈8
 ]:
     for freq in ['lo', 'hi']:
         @after(observations)
         @context(name=name, local=local, freq=freq)
-        @job(name=f'{name}_{freq}', array=64, cpus=2, gpus=1, ram='8GB', time='01:00:00')
+        @job(name=f'{name}_{freq}', array=64, cpus=2, gpus=1, ram='8GB', time='01:00:00', account='nvr_earth2_e2', partition='backfill_block1')
         def evaluation(i: int):
             chain = make_chain()
 

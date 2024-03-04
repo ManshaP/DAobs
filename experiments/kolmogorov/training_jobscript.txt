@@ -1,0 +1,28 @@
+#!/bin/bash
+# Job name:
+#SBATCH --job-name=train_kolmogorov
+#
+# Account:
+#SBATCH --account=nvr_earth2_e2
+#SBATCH --output=out/R-%x.%j.out
+#SBATCH --error=out/R-%x.%j.err
+#
+# Partition:
+#SBATCH --partition=grizzly,grizzly2,polar,polar2
+#
+# Number of tasks (one for each GPU desired for use case) (example):
+#SBATCH --ntasks=1
+#
+# Processors:
+#SBATCH --cpus-per-task=4
+#
+#Number of GPUs
+#SBATCH --gpus=1
+#
+# Wall clock limit:
+#SBATCH --time=4:00:00
+#
+#
+## Command(s) to run:
+srun --container-image=nvcr.io\#nvidia/pytorch:23.12-py3 --container-mounts="/lustre/fsw/portfolios/nvr/projects/nvr_earth2_e2/:/lustre/fsw/portfolios/nvr/projects/nvr_earth2_e2/:rw" python /root/sda/experiments/kolmogorov/train_noslurm.py 
+

@@ -3,7 +3,7 @@ r"""Helpers"""
 import h5py
 import json
 import math
-import ot
+# import ot
 import random
 import torch
 
@@ -202,25 +202,25 @@ def bpf(
     return x
 
 
-def emd(
-    x: Tensor,  # (M, *)
-    y: Tensor,  # (N, *)
-) -> Tensor:
-    r"""Computes the earth mover's distance (EMD) between two distributions.
+# def emd(
+#     x: Tensor,  # (M, *)
+#     y: Tensor,  # (N, *)
+# ) -> Tensor:
+#     r"""Computes the earth mover's distance (EMD) between two distributions.
 
-    Wikipedia:
-        https://wikipedia.org/wiki/Earth_mover%27s_distance
+#     Wikipedia:
+#         https://wikipedia.org/wiki/Earth_mover%27s_distance
 
-    Arguments:
-        x: A set of samples :math:`x ~ p(x)`.
-        y: A set of samples :math:`y ~ q(y)`.
-    """
+#     Arguments:
+#         x: A set of samples :math:`x ~ p(x)`.
+#         y: A set of samples :math:`y ~ q(y)`.
+#     """
 
-    return ot.emd2(
-        x.new_tensor(()),
-        y.new_tensor(()),
-        torch.cdist(x.flatten(1), y.flatten(1)),
-    )
+#     return ot.emd2(
+#         x.new_tensor(()),
+#         y.new_tensor(()),
+#         torch.cdist(x.flatten(1), y.flatten(1)),
+#     )
 
 
 def mmd(
