@@ -13,8 +13,13 @@ The velocities can be inferend from the stream function 𝜓 like this:
 The vorticity is defined as 
 
     q = v_x - u_y
+<<<<<<< HEAD
 
-sd
+
+=======
+djf
+
+>>>>>>> 6ac685000c3b8245fd16b2b3201808e446385c9b
 Unless specified all variables are in spectral space.
 """
 import subprocess
