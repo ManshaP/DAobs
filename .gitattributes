@@ -1,5 +1,9 @@
 ###########
 # IPython #
 ###########
-
 *.ipynb linguist-vendored
+\#[[:space:]]./experiments/kolmogorov/figures.ipynb/experiments/kolmogorov/figures.ipynb filter=lfs diff=lfs merge=lfs -text
+experiments/kolmogorov/figures.ipynb/experiments/kolmogorov/figures.ipynb filter=lfs diff=lfs merge=lfs -text
+experiments/quasigeostrophic/figures.ipynb filter=lfs diff=lfs merge=lfs -text
+experiments/quasigeostrophic/ourversion/test_data filter=lfs diff=lfs merge=lfs -text
+experiments/lorenz/data/train.h5 filter=lfs diff=lfs merge=lfs -text
