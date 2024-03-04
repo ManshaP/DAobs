@@ -1,14 +1,25 @@
 #!/usr/bin/env python
 
-import wandb
-
+import sys
+print(sys.path)
 # from dawgz import job, schedule
 from typing import *
 import os
-import sys
-# file_dir = os.path.dirname(__file__)
-# sys.path.append(file_dir)
 
+# sys.path.append('/home/pmanshausen/sda/')
+# sys.path.append('/home/pmanshausen/')
+sys.path.append('/root/sda/')
+import subprocess
+
+def install(package):
+    subprocess.check_call([sys.executable, "-m", "pip", "install", package])
+install('zuko')
+install('h5py')
+install('seaborn')
+install('wandb')
+import wandb
+
+# wandb.login()
 from sda.mcs import *
 from sda.score import *
 from sda.utils import *
@@ -25,8 +36,8 @@ CONFIG = {
     'kernel_size': 3,
     'activation': 'SiLU',
     # Training
-    'epochs': 200,
-    'batch_size': 5,
+    'epochs': 2000,
+    'batch_size': 16,
     'optimizer': 'AdamW',
     'learning_rate': 2e-4,
     'weight_decay': 1e-3,
@@ -45,11 +56,11 @@ def train(i: int):
     # Network
     window = CONFIG['window']
     score = make_score(**CONFIG)
-    sde = VPSDE(score.kernel, shape=(window * 2, 64, 64)).cuda()
+    sde = VPSDE(score.kernel, shape=(window * 2, 64,64)).cuda()
 
     # Data
-    trainset = TrajectoryDataset(PATH / 'data/train.h5', window=window, flatten=True)
-    validset = TrajectoryDataset(PATH / 'data/valid.h5', window=window, flatten=True)
+    trainset = TrajectoryDataset(PATH / 'data/hf/train.h5', window=window, flatten=True)
+    validset = TrajectoryDataset(PATH / 'data/hf/valid.h5', window=window, flatten=True)
 
     # Training
     generator = loop(

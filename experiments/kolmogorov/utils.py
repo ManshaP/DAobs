@@ -33,7 +33,7 @@ class LocalScoreUNet(ScoreUNet):
     def __init__(
         self,
         channels: int,
-        size: int = 256,
+        size: int = 64,
         **kwargs,
     ):
         super().__init__(channels, 1, **kwargs)

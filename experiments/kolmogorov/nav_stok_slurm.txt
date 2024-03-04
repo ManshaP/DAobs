@@ -4,9 +4,11 @@
 #
 # Account:
 #SBATCH --account=nvr_earth2_e2
+#SBATCH --output=out/R-%x.%j.out
+#SBATCH --error=out/R-%x.%j.err
 #
 # Partition:
-#SBATCH --partition=polar
+#SBATCH --partition=switch
 #
 # Number of tasks (one for each GPU desired for use case) (example):
 #SBATCH --ntasks=1
@@ -21,7 +23,7 @@
 #SBATCH --time=4:00:00
 #
 # Array
-#SBATCH --array=11
+#SBATCH --array=1-10
 ## Command(s) to run (example):
 python ~/sda/experiments/kolmogorov/navier_stokes.py ${SLURM_ARRAY_JOB_ID}
 
