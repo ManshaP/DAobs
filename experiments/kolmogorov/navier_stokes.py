@@ -14,7 +14,7 @@ The vorticity is defined as
 
     q = v_x - u_y
 
-
+sd
 Unless specified all variables are in spectral space.
 """
 import subprocess
