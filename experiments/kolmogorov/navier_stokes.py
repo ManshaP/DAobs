@@ -13,7 +13,7 @@ The velocities can be inferend from the stream function 𝜓 like this:
 The vorticity is defined as 
 
     q = v_x - u_y
-
+djf
 
 Unless specified all variables are in spectral space.
 """
